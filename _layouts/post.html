@@ -23,28 +23,32 @@ layout: default
 {% if page.cover-img %}
 <style>
   .post-header {
-    background-image: url("{{ site.baseurl }}/assets/img/{{ page.date | date: '%Y/%m' }}{{ page.slug | append: '-' | append: page.cover-img | relative_url }}");
+    background-image: url("{{ site.baseurl }}/assets/img/{{ page.date | date: '%Y/%m' }}{{ page.slug | append: '-' | append: page.cover-img }}");
     background-size: cover;
     border-bottom-left-radius: 0.3em;
     border-bottom-right-radius: 0.3em;
   }
 </style>
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    document.querySelectorAll("article h1, article h2, article h3").forEach(function(element) {
-      element.addEventListener("click", function() {
-        const destination = document.getElementById("markdown-toc-" + element.id);
-        if (destination) {
-          destination.scrollIntoView();
-          destination.style.backgroundColor = "rgba(255, 255, 0, 0.5)";
-          setTimeout(() => {
-            // might want to replace with CSS animation instead
-            destination.style.backgroundColor = "";
-          }, 500);
-          // destination.scrollIntoView({ behavior: "smooth" });
-        }
+  document.addEventListener("DOMContentLoaded", function () {
+    document
+      .querySelectorAll("article h1, article h2, article h3")
+      .forEach(function (element) {
+        element.addEventListener("click", function () {
+          const destination = document.getElementById(
+            "markdown-toc-" + element.id
+          );
+          if (destination) {
+            destination.scrollIntoView();
+            destination.style.backgroundColor = "rgba(255, 255, 0, 0.5)";
+            setTimeout(() => {
+              // might want to replace with CSS animation instead
+              destination.style.backgroundColor = "";
+            }, 500);
+            // destination.scrollIntoView({ behavior: "smooth" });
+          }
+        });
       });
-    });
   });
 </script>
 {% endif %}
