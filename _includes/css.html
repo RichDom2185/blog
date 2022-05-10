@@ -10,6 +10,8 @@
     --light-background-color: #fafafa;
     --grey-outline: #bdbdbd;
     --light-grey: #f5f5f5;
+    --dark-grey-text: #4e4e4e;
+    --link-color: #0066cc;
 
     /* Bootstrap 5 screen widths */
     --screen-width-sm: 576px;
@@ -25,10 +27,12 @@
 
   body {
     font-family: var(--font-sans);
+    margin: 0;
   }
 
   a {
     text-decoration: none;
+    color: var(--link-color);
   }
 
   a:hover {
@@ -77,9 +81,7 @@
     display: flex;
     margin: auto;
     max-width: var(--screen-width-xl);
-    height: 100vh;
-    /* maybe set height to max(100vh, some limit) instead?
-     for when client zooms out to like 25% or sth */
+    min-height: min(100vh, var(--screen-width-xxl));
   }
 
   @media screen and (max-width: 992px) {
@@ -133,7 +135,15 @@
   }
 
   .posts-element {
+    display: flex;
     transition: background-color var(--animation-duration) linear;
+  }
+
+  .posts-element img {
+    max-width: 25%;
+    border-radius: 0.3em;
+    aspect-ratio: 3/2;
+    object-fit: cover;
   }
 
   .posts-element:hover {
@@ -213,13 +223,13 @@
   article h1:hover::before,
   article h2:hover::before,
   article h3:hover::before {
-      content: "↑";
-      color: var(--grey-outline);
-      position: absolute;
-      /* right: 0; */
-      font-weight: bold;
-      bottom: 0.1em;
-      left: -1rem;
+    content: "↑";
+    color: var(--grey-outline);
+    position: absolute;
+    /* right: 0; */
+    font-weight: bold;
+    bottom: 0.1em;
+    left: -1rem;
   }
 
   article h2 {
@@ -283,6 +293,38 @@
     max-width: var(--screen-width-lg);
   }
 
+  .post-header img {
+    /* max-width: 25%;
+    border-radius: 0.3em; */
+    width: 80%;
+    display: block;
+    margin-inline: auto;
+    /* border-radius: 0.3em; */
+    aspect-ratio: 2.39;
+    object-fit: cover;
+  }
+
+  .post-author {
+    color: var(--dark-grey-text);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    padding-inline: 0;
+  }
+
+  .post-author::before {
+    content: "—";
+    width: 1ch;
+  }
+  
+  .post-author::first-line {
+    margin-left: 3ch;
+  }
+
+  .post-author li::marker {
+    content: "";
+  }
+
   div.highlight::after {
     text-align: right;
     font-size: 0.8em;
@@ -303,7 +345,7 @@
   .language-brainfuck > .highlight::after {
     content: "Brainfuck";
   }
-  
+
   .language-python > .highlight::after {
     content: "Python";
   }
