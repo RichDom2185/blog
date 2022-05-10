@@ -253,6 +253,14 @@
     margin: auto;
   }
 
+  /* Ideally, set the negative margin only to .profile-section */
+  #posts,
+  .post {
+    margin-top: 0 !important;
+    /* offset = header height + header padding + header shadow */
+    min-height: calc(100vh - var(--header-height) - 1em - 2px);
+  }
+
   /*
  * Blog Styles
  */

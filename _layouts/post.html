@@ -23,10 +23,10 @@ layout: default
 {% if page.cover-img %}
 <style>
   .post-header {
+    margin-top: 1em;
     background-image: url("{{ site.baseurl }}/assets/img/{{ page.date | date: '%Y/%m' }}{{ page.slug | append: '-' | append: page.cover-img }}");
     background-size: cover;
-    border-bottom-left-radius: 0.3em;
-    border-bottom-right-radius: 0.3em;
+    border-radius: 0.3em;
   }
 </style>
 <script>
