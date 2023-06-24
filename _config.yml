@@ -5,6 +5,19 @@ title: "Richard's Blog" # the name of your site, e.g. ACME Corp.
 
 permalink: /:year/:month/:title
 
+exclude:
+  # Inherited from the default exclude list at
+  # https://jekyllrb.com/docs/configuration/default/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  # Own additional files to exclude
+  - README.md
+
 defaults:
   - scope:
       path: "" # an empty string here means all files in the project
