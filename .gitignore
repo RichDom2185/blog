@@ -1,2 +1,7 @@
 .jekyll-cache
+
+# Build files
 _site
+
+# Dependencies
+.bundle/ruby
