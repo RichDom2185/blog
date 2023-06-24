@@ -2,6 +2,7 @@
 url: "https://richdom2185.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "/blog" # the subpath of your site, e.g. /blog
 title: "Richard's Blog" # the name of your site, e.g. ACME Corp.
+remote_theme: RichDom2185/jekyll-blog-theme@2022
 
 permalink: /:year/:month/:title
 
@@ -28,3 +29,6 @@ defaults:
     values:
       layout: post
       authors: ["Richard Dominick"]
+
+plugins:
+  - jekyll-remote-theme
