@@ -5,3 +5,7 @@ _site
 
 # Dependencies
 .bundle/ruby
+
+# Editor settings
+.vscode/
+.idea/
