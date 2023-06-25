@@ -15,5 +15,5 @@ This will install your dependencies locally under the `.bundle` directory.
 To start the server, run:
 
 ```bash
-bundle exec jekyll serve
+bundle exec jekyll serve --livereload
 ```
