@@ -3,16 +3,13 @@ layout: default
 title: "All Posts"
 ---
 
-<div
-  id="posts"
-  class="page-section max-w-5xl px-5 box-border xl:px-0 mx-auto min-h-screen"
->
+<div id="posts" class="max-w-5xl px-5 xl:px-0 mx-auto min-h-screen">
   <h1 class="my-7 text-3xl font-display TEXT_BOLD">📝 All Posts</h1>
   <div class="posts-container">
     {% for post in site.posts %}
     <div class="posts-element">
       <div>
-        <h2><a href="{{ post.url || relative_url }}">{{ post.title }}</a></h2>
+        <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
         {{ post.date | date: "%-d %b %Y" }} {{ post.excerpt }}
       </div>
       {% if post.cover-img %} {% include cover-img.html img=post.cover-img
