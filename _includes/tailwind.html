@@ -1,0 +1,31 @@
+<!-- Tailwind Play CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  const { defaultTheme } = tailwind;
+  tailwind.config = {
+    // Manual override to disable dark mode during interim period
+    // of transitioning from the 2022 to 2023 theme.
+    // This entire file is copied from the 2023 theme in order
+    // to override the one shipped in the theme.
+    darkMode: "class", // FIXME: Remove once fully implemented
+    theme: {
+      extend: {
+        fontFamily: {
+          display: ["Plus Jakarta Sans", ...defaultTheme.fontFamily.sans],
+          sans: ["Figtree", ...defaultTheme.fontFamily.sans],
+          serif: ["Newsreader", ...defaultTheme.fontFamily.serif],
+          mono: ["Spline Sans Mono", ...defaultTheme.fontFamily.mono],
+        },
+      },
+    },
+  };
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    {{ site.data.tailwind | jsonify }}.forEach(({ selector, classes }) => {
+      document.querySelectorAll(`#root ${selector}`).forEach((element) => {
+        element.classList.add(...classes);
+      });
+    });
+  });
+</script>
