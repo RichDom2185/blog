@@ -3,8 +3,11 @@ layout: default
 title: "All Posts"
 ---
 
-<div id="posts" class="page-section">
-  <h1>📝 All Posts</h1>
+<div
+  id="posts"
+  class="page-section max-w-5xl px-5 box-border xl:px-0 mx-auto min-h-screen"
+>
+  <h1 class="my-7 text-3xl font-display TEXT_BOLD">📝 All Posts</h1>
   <div class="posts-container">
     {% for post in site.posts %}
     <div class="posts-element">

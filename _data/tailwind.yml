@@ -1,0 +1,14 @@
+# The following are adapted from
+# https://github.com/RichDom2185/2023-website/blob/master/src/utils/styles.ts
+- selector: .TEXT_BOLD
+  classes:
+    - font-bold
+    - dark:font-semibold
+- selector: .TEXT_NORMAL
+  classes:
+    - font-normal
+    - dark:font-light
+- selector: .TEXT_MEDIUM
+  classes:
+    - font-medium
+    - dark:font-normal
