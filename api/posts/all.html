@@ -1,0 +1,16 @@
+---
+layout: blank
+---
+[
+{%- for post in site.posts %}
+  {
+    "title": "{{ post.title }}",
+    "url": "{{ post.url | absolute_url }}",
+    "path": "{{ post.url | relative_url }}"
+    {%- if post.cover-img %},{% assign date = post.date | date: '%Y/%m/' %}
+    "cover": "{{ 'assets/img/' | append: date | append: post.slug | append: '-' | append: post.cover-img | absolute_url }}",
+    "coverPath": "{{ 'assets/img/' | append: date | append: post.slug | append: '-' | append: post.cover-img | relative_url }}"
+    {%- endif %}
+  }{%- if forloop.last == false -%},{% endif -%}
+{%- endfor %}
+]
