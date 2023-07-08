@@ -1,2 +1,3 @@
-# Redirects all traffic to site.baseurl
-/ /blog
+# Redirects all traffic to root
+/blog / 200
+/blog/* /:splat 200
