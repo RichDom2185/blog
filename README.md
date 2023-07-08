@@ -17,3 +17,7 @@ To start the server, run:
 ```bash
 bundle exec jekyll serve --livereload
 ```
+
+## Deployment
+
+Blog is automatically generated from the `main` branch using GitHub Pages. The `_redirects` file is used solely for the staging deployment on Netlify.
