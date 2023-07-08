@@ -27,4 +27,6 @@ defaults:
       layout: post
 
 plugins:
+  - jemoji
+  - jekyll-github-metadata
   - jekyll-remote-theme
