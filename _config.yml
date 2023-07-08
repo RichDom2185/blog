@@ -20,6 +20,10 @@ exclude:
   # Own additional files to exclude
   - README.md
 
+include:
+  # For Netlify staging deployment
+  - _redirects
+
 defaults:
   - scope:
       path: "_posts"
